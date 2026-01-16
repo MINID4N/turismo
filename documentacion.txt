@@ -1,0 +1,50 @@
+AUTENTIFICACION
+url: http://localhost:5000/api/auth
+
+Datos JSON
+{
+    "usuario": "valor",
+    "contrasena": "valor"
+}
+
+REQUIERE ENVIAR EL TOKEN EN HEADERS DE LAS PETICIONES
+Clave: Authorization
+Valor: Bearer token
+
+METODO GET (MULTIPLES REGISTROS)
+url: http://localhost:5000/api/turistas?page=1&cadena=nombre
+
+METODO GET (REGISTRO UNICO)
+url: http://localhost:5000/api/turistas/id
+
+METODO POST
+url: http://localhost:5000/api/turistas
+Datos JSON
+{
+    "cedula":"",
+    "nombre_tur":"",
+    "email_tur":"",
+    "edad":"",
+    "genero":"",
+    "nacionalidad":""
+}
+
+PUT
+url: http://localhost:5000/api/turistas/id
+{
+    "cedula":"",
+    "nombre_tur":"",
+    "email_tur":"",
+    "edad":"",
+    "genero":"",
+    "nacionalidad":""
+}
+
+METODO DELETE
+url: http://localhost:5000/api/turistas/id
+
+NODEMON
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+Ejecución:
+'npm run dev' 
