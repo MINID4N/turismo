@@ -12,12 +12,13 @@ app.use(express.json());
 const authRoutes = require('./routes/auth');
 const turistasRoutes = require('./routes/turistas');
 const ciudadesRoutes = require('./routes/ciudades');
+const agentesRoutes= require('./routes/agentes');
 
 //Usar las rutas
 app.use('/api/auth', authRoutes);
 app.use('/api/turistas', turistasRoutes);
 app.use('/api/ciudades', ciudadesRoutes);
-
+app.use('/api/agentes', agentesRoutes);
 //ruta de ejemplo
 
 app.get('/', (req, res) => {
