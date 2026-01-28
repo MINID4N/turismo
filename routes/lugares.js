@@ -43,7 +43,8 @@ router.get('/', verifyToken, (req, res) => {
         const totalLugares = countResult[0].total;
         const totalPages = Math.ceil(totalLugares / limit);
         //consulta para obtener los registros de la pagina 
-        const lugaresQuery = `select * from lugares ${whereClause} Limit ? OFFSET ?`;
+        //const lugaresQuery = `select * from lugares ${whereClause} Limit ? OFFSET ?`;
+        const lugaresQuery = `select id_lug, nombre_lug, descripcion_lug, direccion, costoentrada, capacidadpersonas, fk_id_ciu, nombre_ciu from lugares inner join ciudades ON id_ciu = fk_id_ciu ${whereClause} Limit ? OFFSET ? `
         queryParams.push(limit, offset);
         db.query(lugaresQuery, queryParams, (err, lugaresResult) => {
             if (err) {
